@@ -1,0 +1,4 @@
+name: PlayerTabComplete
+main: de.sabbertran.playertabcomplete.PlayerTabComplete
+version: 1.0
+author: Sabbertran
