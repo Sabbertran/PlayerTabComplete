@@ -18,9 +18,17 @@ public class Events implements Listener
     @EventHandler
     public void onTabComplete(TabCompleteEvent ev)
     {
+        String partialPlayerName = ev.getCursor().toLowerCase();
+
+        int lastSpaceIndex = partialPlayerName.lastIndexOf(' ');
+        if (lastSpaceIndex >= 0)
+        {
+            partialPlayerName = partialPlayerName.substring(lastSpaceIndex + 1);
+        }
+
         for (ProxiedPlayer p : main.getProxy().getPlayers())
         {
-            if (p.getName().toLowerCase().startsWith(ev.getCursor().toLowerCase()))
+            if (p.getName().toLowerCase().startsWith(partialPlayerName))
             {
                 ev.getSuggestions().add(p.getName());
             }
