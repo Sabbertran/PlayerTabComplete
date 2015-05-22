@@ -15,7 +15,7 @@ public class Events implements Listener
         this.main = main;
     }
 
-    @EventHandler
+    @EventHandler(priority = EventPriority.HIGHEST)
     public void onTabComplete(TabCompleteEvent ev)
     {
         String partialPlayerName = ev.getCursor().toLowerCase();
